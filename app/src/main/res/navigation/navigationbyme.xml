@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigationbyme"
+    app:startDestination="@id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        tools:layout="@layout/fragment_home"
+        android:name="com.example.application4.Fragment.HomeFragment"
+        android:label="HomeFragment" >
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_notification"
+            app:destination="@id/navigation_notification" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_notification"
+        tools:layout="@layout/fragment_notification"
+        android:name="com.example.application4.Fragment.NotificationFragment"
+        android:label="NotificationFragment" >
+        <argument
+            android:name="amount"
+            app:argType="integer"
+            android:defaultValue="-1" />
+        <action
+            android:id="@+id/action_navigation_notification_to_navigation_dashboard2"
+            app:destination="@id/navigation_dashboard" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_dashboard"
+        tools:layout="@layout/fragment_dashboard"
+        android:name="com.example.application4.Fragment.DashboardFragment"
+        android:label="DashboardFragment" >
+        <action
+            android:id="@+id/action_navigation_dashboard_to_endFragment"
+            app:destination="@id/endFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/endFragment"
+        android:name="com.example.application4.Fragment.EndFragment"
+        android:label="EndFragment" />
+</navigation>
